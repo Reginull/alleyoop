@@ -1,0 +1,88 @@
+
+@font-face {
+    font-family: inter;
+    src: url(/Inter/static/Inter_18pt-Light.ttf);
+}
+
+@font-face {
+    font-family: graffiti ;
+    src: url(/DonGraffiti.otf)
+}
+
+body {
+    background-color: #FCF9F6;
+}
+
+.inter {
+    font-family: inter;
+}
+
+.navbar {
+    background-color: #2C355F;
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    z-index: 10;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    margin-left: 0px;
+}
+
+.nav-links li {
+    margin: 0 20px;
+    margin-top: 10px;
+    margin-bottom: -4px;
+    padding-left: 20%;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    padding-bottom: 23px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 20px;
+    font-family: inter;
+    border-bottom: w2px solid transparent;
+    border-width: 5px;
+    transition: border-bottom 0.3s ease;
+}
+
+.nav-links a:hover {
+    text-decoration: none;
+    border-bottom: 3px solid #ECECEC;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-family: graffiti;
+    color: #ECECEC;
+    font-size: 42px;
+    margin-top: 0px;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.left-side-container {
+    display: flex;
+    width: 37vh;
+    background-color: #F2EFEE; 
+    height: 100%;               
+    position: fixed;           
+    top: 0;
+    left: 0;
+}
