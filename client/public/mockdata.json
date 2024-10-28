@@ -1,0 +1,42 @@
+{
+  
+  "westernConference": [
+    {
+      "id": 1,
+      "teamName": "Los Angeles Lakers",
+      "wins": 55,
+      "losses": 27,
+      "percentage": 0.93,
+      "rank": 1
+    },
+    {
+      "id": 2,
+      "teamName": "Golden State Warriors",
+      "wins": 50,
+      "losses": 32,
+      "percentage": 0.43,
+      "rank": 2
+    }
+  ],
+
+  "easternConference": [
+    {
+      "id": 1,
+      "teamName": "Philadelphia 76'ers",
+      "wins": 100,
+      "losses": 0,
+      "percentage": 1.00,
+      "rank": 1
+      },
+      {
+      "id": 2,
+      "teamName": "Boston Celtics",
+      "wins": 20,
+      "losses": 32,
+      "percentage": 0.23,
+      "rank": 2
+    }
+  ]
+}
+
+  
