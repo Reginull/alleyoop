@@ -1,6 +1,6 @@
 import '../styles.css'
 
-function SideBar() {
+const SideBar = () => {
     return (
     <div className='left-side-container'>
 

@@ -86,3 +86,43 @@ body {
     top: 0;
     left: 0;
 }
+
+/* SEARCH BAR */
+
+.search-container {
+    display: flex;
+    position: relative;
+    width: 1300px;
+    height: 100px;
+    z-index: 40;
+    top: 120px;
+    left: 351px;
+    padding: 0;
+    margin: 0;  
+    
+}
+
+#archive-header {
+    position: absolute;
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: #222121;
+}
+
+.search-bar {
+    position: absolute;
+    width: 1300px;
+    height: 40px;
+    background-color: #ffffff;
+    z-index: 100;
+    bottom: 14px;
+    border-style: solid;
+    border-color: #d9d9d9;
+    font-size: 1.25rem;
+}
+
+.search-bar::placeholder {
+    padding-left: 10px; 
+    color: #777;
+}
