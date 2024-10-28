@@ -3,6 +3,8 @@
 
 Alleyoop is a basketball analysis website that displays comprehensive NBA data for users. It provides information on standings, game schedules, player statistics, and more. The website is designed to be user-friendly and intuitive, with a focus on providing easy access to basketball data. The front-end is built using React, with data fetched from an NBA API.
 
+
+
 **Features**
 
 
@@ -18,7 +20,10 @@ Search Functionality: Easily search for specific players, teams, or seasons.
 
 Dynamic Data Display: Data is fetched dynamically and displayed with up-to-date information.
 
+
+
 **Technologies Used**
+
 
 Front-End: React, HTML, CSS
 
