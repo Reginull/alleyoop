@@ -13,6 +13,7 @@ function App() {
     // eslint-disable-next-line no-unused-vars
     const [backendData, setBackendData] = useState(0);
 
+    // Testing backend to front-end connection
     const fetchAPI = async () => {
         const response = await axios.get("http://localhost:3000/api")
         console.log(response.data)
