@@ -1,32 +1,46 @@
 import '../styles.css'
+// eslint-disable-next-line no-unused-vars
 import React, {useState, useEffect} from 'react';
+import axios from 'axios'
 
 const Standings = () => {
 
-    const [data, setData] = useState([]);
-    const [selectedConference, setSelectedConference] = useState('westernConference');
+    const [backendData, setBackendData] = useState({ eastArray: { rows: [] } });
+    const [selectedConference, setSelectedConference] = useState("eastArray");
+
+
+    const fetchAPI = async () => {
+        try {
+            const response = await axios.get("http://localhost:3000/api");
+            setBackendData(response.data)
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
 
     useEffect(() => {
-        fetch('/mockdata.json')
-            .then((response) => response.json())
-            .then((data) => setData(data))
-            .catch((error) => console.error('Error fetching data:', error));
+        fetchAPI();
     }, []);
+
+    useEffect(() => {
+        console.log(backendData[selectedConference]?.rows)
+    }, [backendData, selectedConference]);
+
 
     const handleConferenceChance = (event) => {
         setSelectedConference(event.target.value);
     };
 
-    const conferenceData = data[selectedConference];
+    const conferenceData = backendData[selectedConference]?.rows || [];
 
     return (
 
         <div className='standings-container'>
 
-            <select className='standings-dropdown' value={selectedConference} onChange={handleConferenceChance}>
+            <select className='standings-dropdown' multiple={false} value={selectedConference} onChange={handleConferenceChance}>
 
-                <option value="westernConference">Western Conference</option>
-                <option value="easternConference">Eastern Conference</option>
+                <option value="westArray">Western Conference</option>
+                <option value="eastArray">Eastern Conference</option>
 
             </select>
 
@@ -37,18 +51,18 @@ const Standings = () => {
                         <th>Name</th>
                         <th>W</th>
                         <th>L</th>
-                        <th>PCT</th>
+                        <th>pct</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    {conferenceData && conferenceData.map((team) => (
-                        <tr key={team.id}>
-                            <td>{team.rank}</td>
-                            <td>{team.teamName}</td>
-                            <td>{team.wins}</td>
-                            <td>{team.losses}</td>
-                            <td>{team.percentage}</td>
+                    {conferenceData && conferenceData.map((rows, index) => (
+                        <tr key={rows.id}>
+                            <td>{index + 1}</td> 
+                            <td>{rows.team_name}</td>
+                            <td>{rows.wins}</td>
+                            <td>{rows.losses}</td>
+                            <td>{rows.losses !== 0? (rows.wins / rows.losses).toFixed(2): 0}</td>
                         </tr>
                     ))}
                 </tbody>
